@@ -23,3 +23,9 @@ test("should return the number itself when a single number is passed", () => {
     expect(add("7,8\n9")).toBe(24);
   });
       
+  test("should support custom delimiters", () => {
+    expect(add("//;\n1;2")).toBe(3);
+    expect(add("//[***]\n1***2***3")).toBe(6);
+    expect(add("//[##]\n4##5##6")).toBe(15);
+  });
+  
