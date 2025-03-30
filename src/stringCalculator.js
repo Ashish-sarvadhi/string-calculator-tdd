@@ -1,8 +1,8 @@
 function add(numbers) {
     //handled empty string
     if (numbers === "") return 0; 
-    //converted string to number
-    return parseInt(numbers); 
+    const numArray = numbers.split(",").map(num => parseInt(num)); // Convert to array of numbers
+  return numArray.reduce((sum, num) => sum + num, 0); // Sum up the numbers
   }
   
   module.exports = { add };
